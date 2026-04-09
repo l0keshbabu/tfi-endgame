@@ -1,0 +1,87 @@
+/* 🌌 Full screen background */
+.disclaimer-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #111827, #020617);
+  color: #e5e7eb;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* 🎬 Main card (INCREASED SIZE) */
+.disclaimer-box {
+  max-width: 650px; /* was 500px */
+  width: 92%;
+  padding: 42px; /* was 32px */
+  border-radius: 18px;
+  background: rgba(17, 24, 39, 0.9);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.06);
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* 🎥 Title (BIGGER) */
+.disclaimer-box h1 {
+  font-size: 34px; /* was 28px */
+  margin-bottom: 20px;
+  letter-spacing: 1.2px;
+  background: linear-gradient(90deg, #facc15, #fa0707);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 📜 Paragraphs (BIGGER + MORE READABLE) */
+.disclaimer-box p {
+  font-size: 17px; /* was 15px */
+  line-height: 1.7;
+  margin-bottom: 14px;
+  color: #d1d5db;
+}
+
+/* ✨ Highlight line */
+.highlight {
+  margin-top: 14px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #f9fafb;
+}
+
+/* 🔥 Button (BIGGER + MORE IMPACT) */
+.proceed-btn {
+  margin-top: 26px;
+  padding: 14px 28px; /* was 12px 24px */
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  color: white;
+  font-size: 17px; /* was 15px */
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* 🎯 Hover effect */
+.proceed-btn:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.35);
+}
+
+/* 🧊 Click effect */
+.proceed-btn:active {
+  transform: scale(0.96);
+}
+
+/* 🎞️ Smooth fade */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
