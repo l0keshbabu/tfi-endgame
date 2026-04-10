@@ -34,7 +34,7 @@
 }
 
 /* 📜 Paragraphs (BIGGER + MORE READABLE) */
-.disclaimer-box p {
+.par {
   font-size: 17px; /* was 15px */
   line-height: 1.7;
   margin-bottom: 14px;
@@ -46,7 +46,7 @@
   margin-top: 14px;
   font-weight: 600;
   font-size: 18px;
-  color: #f9fafb;
+  color: #f7b2b1;
 }
 
 /* 🔥 Button (BIGGER + MORE IMPACT) */
