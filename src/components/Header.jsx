@@ -1,9 +1,9 @@
 export default function Header(){
     return (
         <header className="game-header">
-            <h1>TFI: Endgame 🎬</h1>
+            <h1>TFI: Endgame 📽️</h1>
             <p>
-            Guess the movie name before all the stars fall and TFI collapses!
+                Only true TFI fans can guess the movie before all the heroes are out.
             </p>
         </header>
     )
