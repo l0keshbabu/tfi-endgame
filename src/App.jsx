@@ -3,6 +3,7 @@ import { heroes } from "./data/heroes"
 import { getRandomMovie } from "./utils/getRandomMovie"
 import { getFarewellText } from "./utils/getFarewellText"
 import Disclaimer from "./components/Disclaimer"
+import Header from "./components/Header"
 
 
 
@@ -53,21 +54,24 @@ export default function App(){
   if (showDisclaimer) {
   return <Disclaimer onProceed={handleProceed} />
   }
-  return (
-  <main>
-    <h1>TFI: Endgame</h1>
+return (
+  <main className="game-page">
+    <div className="game-container">
 
-    <p>Movie: {currentMovie}</p> {/* TEMP debug */}
+      <Header/>
 
-    <p>Guessed: {guessedLetters.join(", ")}</p>
+      {/* TEMP DEBUG */}
+      <p>Movie: {currentMovie}</p>
+      <p>Guessed: {guessedLetters.join(", ")}</p>
+      <p>Wrong guesses: {wrongGuessCount}</p>
 
-    <p>Wrong guesses: {wrongGuessCount}</p>
+      <button onClick={() => addGuessedLetter("a")}>Guess A</button>
 
-    <button onClick={() => addGuessedLetter("a")}>Guess A</button>
+      {isGameOver && (
+        <button onClick={startNewGame}>New Game</button>
+      )}
 
-    {isGameOver && (
-      <button onClick={startNewGame}>New Game</button>
-    )}
+    </div>
   </main>
 )
 }
