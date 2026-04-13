@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { heroes } from "./data/heroes"
+import HeroChips from "./components/HeroChips"
 import { getRandomMovie } from "./utils/getRandomMovie"
 import { getFarewellText } from "./utils/getFarewellText"
 import Disclaimer from "./components/Disclaimer"
@@ -59,6 +60,7 @@ return (
     <div className="game-container">
 
       <Header/>
+      <HeroChips wrongGuessCount={wrongGuessCount} />
 
       {/* TEMP DEBUG */}
       <p>Movie: {currentMovie}</p>

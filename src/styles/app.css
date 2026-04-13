@@ -107,6 +107,7 @@
   box-shadow: 0 0 35px rgba(255, 255, 255, 0.06);
   padding: 30px;
   color: #e5e7eb;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 
@@ -127,4 +128,39 @@
 .game-header p {
   font-size: 16px;
   color: #d1d5db;
+}
+/* ==================HeroChips==================== */
+.hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7px;
+  margin-bottom: 35px;
+}
+
+.hero-chip {
+  position: relative; /* FIX */
+  padding: 8px 14px;
+  border-radius: 11px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.hero-chip.lost {
+  filter: grayscale(100%);
+  transform: scale(0.9);
+}
+
+.hero-chip.lost::before {
+  content: "💀";
+  position: absolute;
+  inset: 0; /* shorthand for top/left/right/bottom */
+  border-radius: 11px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 0.9rem;
+  background-color: rgba(0, 0, 0, 0.7);
 }

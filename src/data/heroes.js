@@ -1,47 +1,47 @@
 export const heroes = [
   {
     name: "Prabhas",
-    backgroundColor: "#2E86C1",
-    color: "#fff"
+    backgroundColor: "#E2680F",
+    color: "#F9F4DA"
   },
   {
     name: "Mahesh Babu",
-    backgroundColor: "#28B463",
-    color: "#fff"
+    backgroundColor: "#328AF1",
+    color: "#F9F4DA"
   },
   {
     name: "Allu Arjun",
-    backgroundColor: "#8E44AD",
-    color: "#fff"
+    backgroundColor: "#F4EB13",
+    color: "#1E1E1E"
   },
   {
     name: "Jr NTR",
-    backgroundColor: "#D35400",
-    color: "#fff"
+    backgroundColor: "#2ED3E9",
+    color: "#1E1E1E"
   },
   {
     name: "Ram Charan",
-    backgroundColor: "#C0392B",
-    color: "#fff"
+    backgroundColor: "#298EC6",
+    color: "#F9F4DA"
   },
   {
     name: "Pawan Kalyan",
-    backgroundColor: "#1F618D",
-    color: "#fff"
+    backgroundColor: "#599137",
+    color: "#F9F4DA"
   },
   {
     name: "Nani",
-    backgroundColor: "#117864",
-    color: "#fff"
+    backgroundColor: "#FFD742",
+    color: "#1E1E1E"
   },
   {
     name: "Vijay Deverakonda",
-    backgroundColor: "#7D3C98",
-    color: "#fff"
+    backgroundColor: "#D02B2B",
+    color: "#F9F4DA"
   },
   {
   name: "Sampoornesh Babu",
-  backgroundColor: "#F1C40F",
-  color: "#000"
+  backgroundColor: "#2D519F",
+  color: "#F9F4DA"
 }
 ]
