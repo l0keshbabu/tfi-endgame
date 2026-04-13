@@ -5,6 +5,7 @@ import { getRandomMovie } from "./utils/getRandomMovie"
 import { getFarewellText } from "./utils/getFarewellText"
 import Disclaimer from "./components/Disclaimer"
 import Header from "./components/Header"
+import WordDisplay from "./components/WordDisplay"
 
 
 
@@ -61,6 +62,11 @@ return (
 
       <Header/>
       <HeroChips wrongGuessCount={wrongGuessCount} />
+      <WordDisplay
+      currentMovie={currentMovie}
+      guessedLetters={guessedLetters}
+      isGameLost={isGameLost}
+      />
 
       {/* TEMP DEBUG */}
       <p>Movie: {currentMovie}</p>
