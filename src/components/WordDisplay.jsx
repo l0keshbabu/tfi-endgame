@@ -20,9 +20,13 @@ export default function WordDisplay({
     }
 
     return (
-      <span key={index} style={style}>
-        {shouldRevealLetter ? letter.toUpperCase() : ""}
-      </span>
+      <span
+      key={index}
+      className={isSpace ? "space" : ""}
+      style={!isSpace ? style : {}}
+    >
+      {!isSpace && shouldRevealLetter ? letter.toUpperCase() : ""}
+    </span>
     )
   })
 

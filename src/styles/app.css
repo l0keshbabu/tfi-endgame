@@ -171,6 +171,7 @@ section.word {
   display: flex;
   justify-content: center;
   gap: 6px; 
+
   margin-bottom: 35px;
   flex-wrap: wrap; 
 }
@@ -187,6 +188,12 @@ section.word > span {
   border-bottom: 2px solid #facc15;
   border-radius: 6px;
   transition: all 0.2s ease;
+}
+
+section.word > span.space {
+  width: 20px;       
+  background: none;  
+  border: none;     
 }
 
 /* ========================KeyBoard===================== */
