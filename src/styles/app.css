@@ -170,9 +170,9 @@
 section.word {
   display: flex;
   justify-content: center;
-  gap: 6px; /* increased from 2px */
-  margin-bottom: 25px;
-  flex-wrap: wrap; /* handles long movie names */
+  gap: 6px; 
+  margin-bottom: 35px;
+  flex-wrap: wrap; 
 }
 
 section.word > span {
@@ -189,3 +189,46 @@ section.word > span {
   transition: all 0.2s ease;
 }
 
+/* ========================KeyBoard===================== */
+
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: 8px;
+  max-width: 500px;
+  margin: 0 auto 25px;
+}
+
+
+
+.key {
+  width: 40px;  
+  height: 40px;
+  background-color: #ff9d4d;
+  border: 2px solid #D7D7D7;
+  border-radius: 8px;
+  /* background-color: #374151; */
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+
+.key.correct {
+  background-color: #16a34a;
+}
+.key.wrong {
+  background-color: #dc2626;
+}
+.key:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.key:not(:disabled):hover {
+  transform: scale(1.05);
+}

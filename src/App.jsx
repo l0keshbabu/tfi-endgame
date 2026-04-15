@@ -6,6 +6,7 @@ import { getFarewellText } from "./utils/getFarewellText"
 import Disclaimer from "./components/Disclaimer"
 import Header from "./components/Header"
 import WordDisplay from "./components/WordDisplay"
+import Keyboard from "./components/KeyBoard"
 
 
 
@@ -66,6 +67,12 @@ return (
       currentMovie={currentMovie}
       guessedLetters={guessedLetters}
       isGameLost={isGameLost}
+      />
+      <Keyboard 
+      guessedLetters={guessedLetters}
+      currentMovie={currentMovie}
+      addGuessedLetter={addGuessedLetter}
+      isGameOver={isGameOver}
       />
 
       {/* TEMP DEBUG */}
