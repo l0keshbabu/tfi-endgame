@@ -7,6 +7,7 @@ import Disclaimer from "./components/Disclaimer"
 import Header from "./components/Header"
 import WordDisplay from "./components/WordDisplay"
 import Keyboard from "./components/KeyBoard"
+import GameStatus from "./components/GameStatus"
 
 
 
@@ -62,6 +63,10 @@ return (
     <div className="game-container">
 
       <Header/>
+      <GameStatus 
+      isGameWon={isGameWon}
+      isGameLost={isGameLost}
+      />
       <HeroChips wrongGuessCount={wrongGuessCount} />
       <WordDisplay
       currentMovie={currentMovie}
