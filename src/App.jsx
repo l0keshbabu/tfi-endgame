@@ -81,7 +81,7 @@ return (
       />
 
       {/* TEMP DEBUG */}
-      <p>Movie: {currentMovie}</p>
+      {/* <p>Movie: {currentMovie}</p> */}
       <p>Guessed: {guessedLetters.join(", ")}</p>
       <p>Wrong guesses: {wrongGuessCount}</p>
 

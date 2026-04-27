@@ -213,13 +213,14 @@ section.word > span.space {
 .key {
   width: 40px;  
   height: 40px;
-  background-color: #ff9d4d;
-  border: 2px solid #D7D7D7;
+  background-color: #111827;
+border: 2px solid rgba(255, 255, 255, 0.08);
+  color: #e5e7eb;
   border-radius: 8px;
-  /* background-color: #374151; */
-  color: black;
+  
+ 
   font-weight: bold;
-  /* font-size: 1rem; */
+  
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -227,9 +228,13 @@ section.word > span.space {
 
 .key.correct {
   background-color: #16a34a;
+  border-color: #22c55e;
+  color: white;
 }
 .key.wrong {
-  background-color: #dc2626;
+  background-color: #b91c1c;
+  border-color: #ef4444;
+  color: white;
 }
 .key:disabled {
   opacity: 0.6;
@@ -238,7 +243,9 @@ section.word > span.space {
 
 .key:not(:disabled):hover {
   transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
 }
+
 
 /* =============game status and farewell messages==================== */
 .game-status {
