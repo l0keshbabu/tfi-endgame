@@ -272,3 +272,10 @@ border: 2px solid rgba(255, 255, 255, 0.08);
 .game-status p {
   font-size: 17px;
 }
+
+.game-status.farewell {
+  background-color: rgba(251, 191, 36, 0.15); /* soft yellow */
+  border: 1px solid #facc15;
+  color: #fde68a;
+  font-weight: 500;
+}

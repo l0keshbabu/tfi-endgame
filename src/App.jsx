@@ -63,9 +63,11 @@ return (
     <div className="game-container">
 
       <Header/>
-      <GameStatus 
+      <GameStatus
       isGameWon={isGameWon}
       isGameLost={isGameLost}
+      isLastGuessIncorrect={isLastGuessIncorrect}
+      wrongGuessCount={wrongGuessCount}
       />
       <HeroChips wrongGuessCount={wrongGuessCount} />
       <WordDisplay
