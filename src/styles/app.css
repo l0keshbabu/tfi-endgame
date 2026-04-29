@@ -205,7 +205,7 @@ section.word > span.space {
   justify-content: center; 
   gap: 8px;
   max-width: 500px;
-  margin: 0 auto 25px;
+  margin: 0 auto 35px;
 }
 
 
@@ -283,7 +283,7 @@ border: 2px solid rgba(255, 255, 255, 0.08);
 /* =======================Newgame=============== */
 .new-game-btn {
   display: block;
-  margin: 20px auto 0;
+  margin: 20px auto 5px;
 
   padding: 12px 28px;
   font-size: 16px;

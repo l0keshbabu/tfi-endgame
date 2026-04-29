@@ -84,16 +84,6 @@ return (
       {isGameOver && (
         <button onClick={startNewGame} className="new-game-btn">New Game</button>
       )}
-
-      {/* TEMP DEBUG */}
-      {/* <p>Movie: {currentMovie}</p> */}
-      <p>Guessed: {guessedLetters.join(", ")}</p>
-      <p>Wrong guesses: {wrongGuessCount}</p>
-
-      <button onClick={() => addGuessedLetter("a")}>Guess A</button>
-
-      
-
     </div>
   </main>
 )
