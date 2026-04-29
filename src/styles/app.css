@@ -279,3 +279,31 @@ border: 2px solid rgba(255, 255, 255, 0.08);
   color: #fde68a;
   font-weight: 500;
 }
+
+/* =======================Newgame=============== */
+.new-game-btn {
+  display: block;
+  margin: 20px auto 0;
+
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+
+  color: white;
+ background: linear-gradient(135deg, #2563eb, #06b6d4);
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.new-game-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+}
+
+.new-game-btn:active {
+  transform: scale(0.95);
+}
