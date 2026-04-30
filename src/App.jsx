@@ -8,6 +8,8 @@ import Header from "./components/Header"
 import WordDisplay from "./components/WordDisplay"
 import Keyboard from "./components/KeyBoard"
 import GameStatus from "./components/GameStatus"
+import WastedSound from "./assets/sounds/wasted.mp3"
+import {useEffect, useRef } from "react"
 
 
 
@@ -53,6 +55,13 @@ export default function App(){
   setCurrentMovie(getRandomMovie())
   setGuessedLetters([])
   }
+  const audioRef = useRef(null)
+  useEffect(() => {
+  if (isGameLost && audioRef.current) {
+    audioRef.current.currentTime = 0 // restart sound
+    audioRef.current.play()
+  }
+  }, [isGameLost])
 
 
   if (showDisclaimer) {
@@ -81,6 +90,7 @@ return (
       addGuessedLetter={addGuessedLetter}
       isGameOver={isGameOver}
       />
+      <audio ref={audioRef} src={WastedSound} preload="auto" />
       {isGameOver && (
         <button onClick={startNewGame} className="new-game-btn">New Game</button>
       )}
