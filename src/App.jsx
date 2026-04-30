@@ -10,7 +10,7 @@ import Keyboard from "./components/KeyBoard"
 import GameStatus from "./components/GameStatus"
 import WastedSound from "./assets/sounds/wasted.mp3"
 import {useEffect, useRef } from "react"
-
+import Confetti from "react-confetti";
 
 
 
@@ -68,9 +68,20 @@ export default function App(){
   return <Disclaimer onProceed={handleProceed} />
   }
 return (
+  
   <main className="game-page">
+    {isGameWon && (
+      <Confetti
+      recycle={false}
+      // gravity={0.3}
+      numberOfPieces={1000}
+      width={window.innerWidth}
+      height={window.innerHeight}
+      colors={["#22d3ee", "#06b6d4", "#3b82f6"]}
+      />
+      )}
     <div className="game-container">
-
+      
       <Header/>
       <GameStatus
       isGameWon={isGameWon}
