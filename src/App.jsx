@@ -9,6 +9,7 @@ import WordDisplay from "./components/WordDisplay"
 import Keyboard from "./components/KeyBoard"
 import GameStatus from "./components/GameStatus"
 import WastedSound from "./assets/sounds/wasted.mp3"
+import WonSound from "./assets/sounds/Won.wav"
 import {useEffect, useRef } from "react"
 import Confetti from "react-confetti";
 
@@ -55,13 +56,20 @@ export default function App(){
   setCurrentMovie(getRandomMovie())
   setGuessedLetters([])
   }
-  const audioRef = useRef(null)
+  const audioLostRef = useRef(null)
   useEffect(() => {
-  if (isGameLost && audioRef.current) {
-    audioRef.current.currentTime = 0 // restart sound
-    audioRef.current.play()
+  if (isGameLost && audioLostRef.current) {
+    audioLostRef.current.currentTime = 0 // restart sound
+    audioLostRef.current.play()
   }
   }, [isGameLost])
+  const audioWonRef = useRef(null)
+  useEffect(() => {
+    if(isGameWon && audioWonRef.current){
+      audioWonRef.current.currentTime = 0
+      audioWonRef.current.play()
+    }
+  },[isGameWon])
 
 
   if (showDisclaimer) {
@@ -73,7 +81,7 @@ return (
     {isGameWon && (
       <Confetti
       recycle={false}
-      // gravity={0.3}
+     
       numberOfPieces={1000}
       width={window.innerWidth}
       height={window.innerHeight}
@@ -101,7 +109,8 @@ return (
       addGuessedLetter={addGuessedLetter}
       isGameOver={isGameOver}
       />
-      <audio ref={audioRef} src={WastedSound} preload="auto" />
+      <audio ref={audioLostRef} src={WastedSound} preload="auto" />
+      <audio ref={audioWonRef} src={WonSound} preload="auto" />
       {isGameOver && (
         <button onClick={startNewGame} className="new-game-btn">New Game</button>
       )}
