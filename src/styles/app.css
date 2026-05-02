@@ -123,21 +123,21 @@
 
 .game-header h1 {
   font-size: 32px;
+  font-family: 'Bebas Neue', sans-serif;
   margin-bottom: 10px;
-  letter-spacing: 1.2px;
-  /* background: linear-gradient(90deg, #facc15, #ef4444); */
-  /* -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
+  letter-spacing: 1.9px;
   color: #F9F4DA;
 }
 
 .game-header p {
   font-size: 16px;
+  font-family: "Nunito", sans-serif;
   color: #8E8E8E;
 }
 /* ==================HeroChips==================== */
 .hero-chips {
   display: flex;
+  font-family: "Nunito", sans-serif;
   flex-wrap: wrap;
   justify-content: center;
   gap: 7px;
@@ -222,7 +222,7 @@ section.word > span.space {
 border: 2px solid rgba(255, 255, 255, 0.08);
   color: #e5e7eb;
   border-radius: 8px;
-  
+  font-family: "Nunito", sans-serif;
  
   font-weight: bold;
   
@@ -271,17 +271,20 @@ border: 2px solid rgba(255, 255, 255, 0.08);
 }
 .game-status h2 {
   margin-bottom: 5px;
+  font-family: "Nunito", sans-serif;
   font-size: 22px;
 }
 
 .game-status p {
   font-size: 17px;
+  font-family: "Nunito", sans-serif;
 }
 
 .game-status.farewell {
   background-color: rgba(251, 191, 36, 0.15); /* soft yellow */
   border: 1px solid #facc15;
   color: #fde68a;
+  font-family: "Nunito", sans-serif;
   font-weight: 500;
 }
 
