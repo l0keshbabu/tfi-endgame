@@ -23,6 +23,8 @@ export default function App(){
   return !sessionStorage.getItem("tfiDisclaimerAccepted")})
   const [currentMovie, setCurrentMovie] = useState(() => getRandomMovie())
   const [guessedLetters, setGuessedLetters] = useState([])
+  const [currentStreak,setCurrentStreak] = useState(0)
+
 
   // derived values
   const wrongGuessCount = guessedLetters.filter(
@@ -72,6 +74,15 @@ export default function App(){
     }
   },[isGameWon])
 
+  useEffect(() => {
+    if(isGameWon){
+      setCurrentStreak(prev => prev+1)
+    }
+    if(isGameLost){
+      setCurrentStreak(0)
+    }
+  },[isGameWon,isGameLost]) 
+
 
   if (showDisclaimer) {
   return <Disclaimer onProceed={handleProceed} />
@@ -92,6 +103,7 @@ return (
     <div className="game-container">
       
       <Header/>
+      <p>{currentStreak}</p>
       <GameStatus
       isGameWon={isGameWon}
       isGameLost={isGameLost}
@@ -117,5 +129,6 @@ return (
       )}
     </div>
   </main>
+ 
 )
 }
