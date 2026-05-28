@@ -8,6 +8,7 @@ import Header from "./components/Header"
 import WordDisplay from "./components/WordDisplay"
 import Keyboard from "./components/KeyBoard"
 import GameStatus from "./components/GameStatus"
+import Streak from "./components/Streak"
 // import WastedSound from "./assets/sounds/wasted.mp3"
 import WastedSound from "./assets/sounds/lose.mp3"
 import WonSound from "./assets/sounds/Won.wav"
@@ -110,7 +111,7 @@ return (
     <div className="game-container">
       
       <Header/>
-      <p>{currentStreak}</p>
+      <Streak currentStreak={currentStreak}/>
       <GameStatus
       isGameWon={isGameWon}
       isGameLost={isGameLost}
