@@ -23,7 +23,10 @@ export default function App(){
   return !sessionStorage.getItem("tfiDisclaimerAccepted")})
   const [currentMovie, setCurrentMovie] = useState(() => getRandomMovie())
   const [guessedLetters, setGuessedLetters] = useState([])
-  const [currentStreak,setCurrentStreak] = useState(0)
+  const [currentStreak,setCurrentStreak] = useState(() => {
+    const savedStreak = localStorage.getItem("currentStreak")
+    return savedStreak ? Number(savedStreak) : 0
+  })
 
 
   // derived values
@@ -82,6 +85,10 @@ export default function App(){
       setCurrentStreak(0)
     }
   },[isGameWon,isGameLost]) 
+
+  useEffect(() => {
+    localStorage.setItem("currentStreak",currentStreak)
+  },[currentStreak])
 
 
   if (showDisclaimer) {
