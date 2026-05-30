@@ -21,7 +21,7 @@ export default function GameStatus({
   if (isGameWon) {
     return (
       <section className="game-status won">
-        <h2>Blockbuster! 🎬🔥</h2>
+        <h2>Blockbuster! 💥</h2>
         <p>You saved TFI!</p>
       </section>
     )
