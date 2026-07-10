@@ -1,3 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1px;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 /* Full screen background */
 .disclaimer-container {
   height: 100vh;
@@ -7,7 +19,7 @@
   background: radial-gradient(circle at top, #111827, #020617);
   color: #e5e7eb;
   font-family: 'Segoe UI', sans-serif;
-  border-radius: 9px;
+  border-radius: 2px;
 }
 
 /* 🎬 Main card (INCREASED SIZE) */
@@ -24,9 +36,17 @@
   animation: fadeIn 0.8s ease-in-out;
 }
 
+@media (max-width: 480px) {
+  .disclaimer-box {
+    padding: 26px 20px;
+    border-radius: 14px;
+  }
+}
+
 /* 🎥 Title (BIGGER) */
 .disclaimer-box h1 {
-  font-size: 34px; /* was 28px */
+  font-size: clamp(24px, 7vw, 34px); /* was 28px */
+  font-family: 'Bebas Neue', sans-serif;
   margin-bottom: 20px;
   letter-spacing: 1.2px;
   background: linear-gradient(90deg, #facc15, #fa0707);
@@ -92,10 +112,25 @@
   min-height: 100vh;
   padding: 20px; 
   background: radial-gradient(circle at top, #111827, #020617);
-  border-radius: 9px;
+  border-radius: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 480px) {
+  .game-page {
+    padding: 10px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .game-page {
+    align-items: flex-start;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
 }
 
 
@@ -115,6 +150,13 @@
    box-sizing: border-box;
 }
 
+@media (max-width: 480px) {
+  .game-container {
+    padding: 16px;
+    border-radius: 14px;
+  }
+}
+
 
 .game-header {
   text-align: center;
@@ -122,7 +164,7 @@
 }
 
 .game-header h1 {
-  font-size: 40px;
+  font-size: clamp(24px, 8vw, 40px);
   font-family: 'Bebas Neue', sans-serif;
   margin-bottom: 10px;
   letter-spacing: 2.9px;
@@ -151,6 +193,17 @@
   font-size: 14px;
   font-weight: 600;
   transition: all 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .hero-chips {
+    gap: 5px;
+    margin-bottom: 24px;
+  }
+  .hero-chip {
+    padding: 6px 10px;
+    font-size: 12.5px;
+  }
 }
 
 .hero-chip.lost {
@@ -195,6 +248,17 @@ section.word > span {
   transition: all 0.2s ease;
 }
 
+@media (max-width: 480px) {
+  section.word > span {
+    height: 36px;
+    width: 36px;
+    font-size: 1rem;
+  }
+  section.word > span.space {
+    width: 16px;
+  }
+}
+
 section.word > span.space {
   width: 20px;       
   background: none;  
@@ -230,6 +294,15 @@ border: 2px solid rgba(255, 255, 255, 0.08);
   transition: all 0.2s ease;
 }
 
+@media (max-width: 480px) {
+  .keyboard {
+    gap: 6px;
+  }
+  .key {
+    width: 44px;
+    height: 44px;
+  }
+}
 
 .key.correct {
   background-color: #16a34a;
@@ -320,6 +393,7 @@ border: 2px solid rgba(255, 255, 255, 0.08);
 
 .streak-card {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 18px;
   margin-bottom: 27px;

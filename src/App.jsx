@@ -9,7 +9,6 @@ import WordDisplay from "./components/WordDisplay"
 import Keyboard from "./components/KeyBoard"
 import GameStatus from "./components/GameStatus"
 import Streak from "./components/Streak"
-// import WastedSound from "./assets/sounds/wasted.mp3"
 import WastedSound from "./assets/sounds/lose.mp3"
 import WonSound from "./assets/sounds/Won.wav"
 import {useEffect, useRef } from "react"
@@ -22,6 +21,10 @@ export default function App(){
   // states
   const [showDisclaimer, setShowDisclaimer] = useState(() => {
   return !sessionStorage.getItem("tfiDisclaimerAccepted")})
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight
+  })
   const [currentMovie, setCurrentMovie] = useState(() => getRandomMovie())
   const [guessedLetters, setGuessedLetters] = useState([])
   const [currentStreak,setCurrentStreak] = useState(0)
@@ -80,10 +83,9 @@ export default function App(){
   },[isGameWon])
 
   useEffect(() => {
-    if(isGameWon){
-      setCurrentStreak(prev => prev+1)
-    }
-    if(isGameLost){
+    if (isGameWon) {
+      setCurrentStreak(prev => prev + 1)
+    } else if (isGameLost) {
       setCurrentStreak(0)
     }
   },[isGameWon,isGameLost]) 
@@ -93,11 +95,19 @@ export default function App(){
     if(currentStreak>bestStreak){
       setBestStreak(currentStreak)
     }
-  },[currentStreak,bestStreak])
+  },[currentStreak])
 
   useEffect(() => {
     localStorage.setItem("bestStreak",bestStreak)
   },[bestStreak])
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({ width: window.innerWidth, height: window.innerHeight })
+    }
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
 
   if (showDisclaimer) {
@@ -111,8 +121,8 @@ return (
       recycle={false}
      
       numberOfPieces={1000}
-      width={window.innerWidth}
-      height={window.innerHeight}
+      width={windowSize.width}
+      height={windowSize.height}
       colors={["#22d3ee", "#06b6d4", "#3b82f6"]}
       />
       )}
