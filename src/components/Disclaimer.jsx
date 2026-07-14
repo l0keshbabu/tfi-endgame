@@ -27,7 +27,7 @@ export default function Disclaimer({ onProceed }) {
         </p>
 
         <button className="proceed-btn" onClick={onProceed}>
-          Enter TFI Endgame 🔥
+          I Understand — Let's Play 🔥
         </button>
       </div>
     </div>

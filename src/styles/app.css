@@ -312,6 +312,13 @@ border: 2px solid rgba(255, 255, 255, 0.08);
   border-color: #22c55e;
   color: white;
 }
+@keyframes shake {
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+}
+.key.wrong {
+  animation: shake 0.15s ease;
+}
 .key.wrong {
   background-color: #b91c1c;
   border-color: #ef4444;

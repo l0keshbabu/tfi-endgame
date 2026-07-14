@@ -109,6 +109,18 @@ export default function App(){
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
+  useEffect(() => {
+  function handleKeyDown(e) {
+    if (isGameOver) return
+    const key = e.key.toLowerCase()
+    if (key.length === 1 && key >= "a" && key <= "z") {
+      addGuessedLetter(key)
+    }
+  }
+  window.addEventListener("keydown", handleKeyDown)
+  return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [isGameOver, addGuessedLetter])
+
 
   if (showDisclaimer) {
   return <Disclaimer onProceed={handleProceed} />
