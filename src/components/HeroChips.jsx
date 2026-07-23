@@ -11,14 +11,27 @@ export default function HeroChips({ wrongGuessCount }) {
     }
 
     return (
-      <span
-        key={hero.name}
-        className={`hero-chip ${isLost ? "lost" : ""}`}
-        style={styles}
-      >
-        {hero.name}
-      </span>
-    )
+  <div
+    key={hero.id}
+    className={`hero-chip ${isLost ? "lost" : ""}`}
+    style={styles}
+    title={isLost ? `${hero.name} - Eliminated` : hero.name}
+  >
+    <span className="hero-bulb"></span>
+
+    <span className="hero-initials">
+      {hero.initials}
+    </span>
+
+    <span className="hero-name">
+      {hero.name}
+    </span>
+
+    {isLost && (
+      <span className="hero-crack"></span>
+    )}
+  </div>
+)
   })
 
   return <section className="hero-chips">{heroElements}</section>
