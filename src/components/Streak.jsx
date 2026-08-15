@@ -5,7 +5,9 @@ export default function Streak({currentStreak,bestStreak}){
             <p className="streak-title">🔥 Box Office Run</p>
             <h3 className="streak-text">
   {currentStreak === 0 ? (
-    "First blockbuster awaits"
+      <span className="streak-empty">
+    First blockbuster awaits
+  </span>
   ) : (
     <>
       <span className="streak-number gradient-text">
@@ -13,7 +15,11 @@ export default function Streak({currentStreak,bestStreak}){
       </span>
 
       <span className="streak-label">
-        Blockbusters in a row
+        {currentStreak === 1 ?(
+          "Blockbuster"
+        ):(
+          "Blockbusters in a Row"
+        )}
       </span>
     </>
   )}
@@ -23,7 +29,7 @@ export default function Streak({currentStreak,bestStreak}){
                 <p className="streak-title">🏆 Hall of Fame</p>
                 <h3 className="streak-text">
                 {bestStreak===0
-                    ? "No records yet "
+                    ?<span className="streak-empty"> No records yet </span>
                    :(
    <>
   <span className="streak-number best-gradient-text">
@@ -31,7 +37,11 @@ export default function Streak({currentStreak,bestStreak}){
   </span>
 
   <span className="streak-label">
-    Consecutive Blockbusters
+    {currentStreak === 1 ?(
+          "Blockbuster"
+        ):(
+          "Consicutive Blockbusters"
+        )}
   </span>
 </>
   )}
