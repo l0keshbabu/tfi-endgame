@@ -37,7 +37,7 @@ export default function Streak({currentStreak,bestStreak}){
   </span>
 
   <span className="streak-label">
-    {currentStreak === 1 ?(
+    {bestStreak === 1 ?(
           "Blockbuster"
         ):(
           "Consicutive Blockbusters"

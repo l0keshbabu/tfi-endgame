@@ -129,15 +129,22 @@ return (
   
   <main className="game-page">
     {isGameWon && (
-      <Confetti
-      recycle={false}
-     
-      numberOfPieces={1000}
-      width={windowSize.width}
-      height={windowSize.height}
-      colors={["#22d3ee", "#06b6d4", "#3b82f6"]}
-      />
-      )}
+  <Confetti
+    recycle={false}
+    numberOfPieces={1000}
+    width={windowSize.width}
+    height={windowSize.height}
+    colors={["#22d3ee", "#06b6d4", "#3b82f6"]}
+    
+    style={{
+      position: "fixed",
+      top: 0,
+      left: 0,
+      zIndex: 9999,
+      pointerEvents: "none",
+    }}
+  />
+)}
     <div className="game-container">
       
       <Header/>
