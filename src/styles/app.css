@@ -264,7 +264,10 @@ body {
     opacity .3s,
     box-shadow .3s;
 }
-
+.hero-chip:hover{
+  transform: translateY(-4px);
+  transition:.25s;
+}
 /* .hero-bulb{
   width:8px;
   height:8px;
