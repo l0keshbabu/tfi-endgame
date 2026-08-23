@@ -7,7 +7,6 @@ export const movies = [
   "arya",
   "desamuduru",
 
-  "rrr",
   "magadheera",
   "rangasthalam",
   "dhruva",
@@ -65,7 +64,6 @@ export const movies = [
   "bimbisara",
   "hanuman",
   "sye",
-  "chatrapathi",
   "aadi",
   "indra",
   "tagore",

@@ -1,6 +1,6 @@
-import React from "react"
+
 import "../styles/app.css"
-import bgImage from "../assets/disclimerbg.png"
+
 
 export default function Disclaimer({ onProceed }) {
   return (

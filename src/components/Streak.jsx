@@ -40,7 +40,7 @@ export default function Streak({currentStreak,bestStreak}){
     {bestStreak === 1 ?(
           "Blockbuster"
         ):(
-          "Consicutive Blockbusters"
+          "Consecutive Blockbusters"
         )}
   </span>
 </>
