@@ -8,6 +8,13 @@ Unlike the original Assembly Endgame, this project introduces an entirely new th
 
 ---
 
+## 🌐 Live Demo
+
+🎮 **Play TFI Endgame:**  
+https://tfi-endgame.vercel.app/
+
+---
+
 # 🎯 Why I Built This
 
 Instead of recreating the original Assembly Endgame project, I wanted to build something with my own identity.
@@ -52,24 +59,37 @@ The goal of this project was not only to practice React fundamentals, but also t
 - Cinematic game-over message
 
 ### 📱 Fully Responsive
-- Optimized for Mobile, Tablet, Laptop, and Desktop
+- Designed for:
+  - 📱 Mobile
+  - 📲 Tablet
+  - 💻 Laptop
+  - 🖥️ Desktop
+- Responsive game container
+- Responsive hero chips
+- Responsive keyboard layout
+- Adaptive spacing and typography
 
 ### 🎨 Custom UI
+
 - Modern dark cinematic interface
 - Film-inspired header
+- Decorative film sprocket strips
 - Custom hero cards
-- Responsive keyboard
-- Glassmorphism-inspired cards
-- Smooth hover interactions
+- Glassmorphism-inspired streak cards
+- Gradient streak indicators
+- Subtle hover interactions
+- Custom typography and color palette inspired by cinema
 
 ---
 
 # 🛠 Tech Stack
 
-- React
-- JavaScript (ES6+)
-- CSS3
-- Vite
+- **React**
+- **JavaScript (ES6+)**
+- **CSS3**
+- **Vite**
+- **React Confetti**
+- **Vercel**
 
 ---
 
@@ -82,17 +102,20 @@ It demonstrates:
 - Functional Components
 - Component Composition
 - Props
-- State Management (`useState`)
-- Side Effects (`useEffect`)
-- Refs (`useRef`)
+- State Management with `useState`
+- Side Effects with `useEffect`
+- Refs with `useRef`
 - Conditional Rendering
 - Event Handling
 - Derived State
-- Local Storage
-- Session Storage
-- Responsive Design
 - Dynamic Styling
 - Component Reusability
+- Browser Storage
+  - Local Storage
+  - Session Storage
+- Responsive Design
+- Audio handling
+- Third-party React libraries
 
 ---
 
@@ -165,6 +188,18 @@ Run the development server
 ```bash
 npm run dev
 ```
+
+---
+
+## 🌍 Deployment
+
+TFI Endgame is deployed using **Vercel**.
+
+The production application is built using Vite and automatically deployed from the GitHub repository.
+
+### Live Application
+
+🎮 **[Play TFI Endgame](https://tfi-endgame.vercel.app/)**
 
 ---
 
