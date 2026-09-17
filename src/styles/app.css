@@ -116,6 +116,7 @@ body {
   background: radial-gradient(circle at top, #111827, #020617);
   border-radius: 2px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -123,13 +124,13 @@ body {
 @media (max-width: 480px) {
   .game-page {
     padding: 10px;
-    align-items: flex-start;
+    justify-content: flex-start;
   }
 }
 
 @media (max-height: 500px) and (orientation: landscape) {
   .game-page {
-    align-items: flex-start;
+    justify-content: flex-start;
     padding-top: 14px;
     padding-bottom: 14px;
   }
