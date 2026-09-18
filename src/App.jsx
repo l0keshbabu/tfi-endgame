@@ -11,6 +11,7 @@ import Streak from "./components/Streak"
 import WastedSound from "./assets/sounds/lose.mp3"
 import WonSound from "./assets/sounds/Won.wav"
 import Confetti from "react-confetti"
+import Navigation from "./components/Navigation"
 
 
 export default function App() {
@@ -188,7 +189,7 @@ export default function App() {
 
   return (
     <main className="game-page">
-
+      <Navigation />
       {isGameWon && (
         <Confetti
           recycle={false}
