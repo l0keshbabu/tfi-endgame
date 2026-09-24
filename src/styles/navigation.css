@@ -55,3 +55,104 @@
   outline: 2px solid #facc15;
   outline-offset: 2px;
 }
+
+/* ---- How to Play overlay ---- */
+
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(2, 6, 23, 0.6);
+  backdrop-filter: blur(3px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1000;
+  padding: 16px;
+}
+
+.info-panel {
+  width: min(480px, 100%);
+  max-height: 85vh;
+
+  overflow-y: auto;
+
+  background: rgba(4, 8, 16, 0.95);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+
+  padding: 28px 26px;
+
+  color: #e5e7eb;
+  font-family: "Nunito", sans-serif;
+}
+
+.info-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.info-panel-header h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 26px;
+  letter-spacing: 0.06em;
+  color: #f9f4da;
+}
+
+.nav-close-btn {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: #e5e7eb;
+
+  cursor: pointer;
+  font-size: 15px;
+
+  flex-shrink: 0;
+
+  transition: all 0.2s ease;
+}
+
+.nav-close-btn:hover {
+  border-color: rgba(250, 204, 21, 0.5);
+  transform: rotate(90deg);
+}
+
+.info-panel-list {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+.info-panel-list li {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #d1d5db;
+}
+
+.info-panel-footer {
+  font-size: 13px;
+  color: #8e8e8e;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+  padding-top: 14px;
+}
