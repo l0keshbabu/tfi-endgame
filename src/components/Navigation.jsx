@@ -1,9 +1,21 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "../styles/navigation.css"
 
 export default function Navigation() {
   const [isInfoOpen, setIsInfoOpen] = useState(false)
+  useEffect(() => {
+  function handleKeyDown(e) {
+    if (e.key === "Escape") {
+      setIsInfoOpen(false)
+    }
+  }
 
+  window.addEventListener("keydown", handleKeyDown)
+
+  return () => {
+    window.removeEventListener("keydown", handleKeyDown)
+  }
+}, [])
   function openInfo() {
     setIsInfoOpen(true)
   }
