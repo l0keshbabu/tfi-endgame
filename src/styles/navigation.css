@@ -177,3 +177,16 @@
     transform: translateY(0) scale(1);
   }
 }
+.menu-trigger {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .info-trigger {
+    display: none;
+  }
+
+  .menu-trigger {
+    display: inline-flex;
+  }
+}

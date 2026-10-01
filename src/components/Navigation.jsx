@@ -36,6 +36,13 @@ export default function Navigation() {
         >
           <span aria-hidden="true">ⓘ</span>
         </button>
+        <button
+        type="button"
+        className="nav-icon-btn menu-trigger"
+        aria-label="Open menu"
+        aria-haspopup="menu">
+          <span aria-hidden="true">☰</span>
+        </button>
       </nav>
 
       {isInfoOpen && (
