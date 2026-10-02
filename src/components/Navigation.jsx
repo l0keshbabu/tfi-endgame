@@ -3,10 +3,12 @@ import "../styles/navigation.css"
 
 export default function Navigation() {
   const [isInfoOpen, setIsInfoOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   useEffect(() => {
   function handleKeyDown(e) {
     if (e.key === "Escape") {
       setIsInfoOpen(false)
+      setIsMenuOpen(false)
     }
   }
 
@@ -39,12 +41,97 @@ export default function Navigation() {
         <button
         type="button"
         className="nav-icon-btn menu-trigger"
+        onClick={() => setIsMenuOpen(true)}
         aria-label="Open menu"
-        aria-haspopup="menu">
+        aria-haspopup="menu"
+        aria-expanded={isMenuOpen}>
           <span aria-hidden="true">☰</span>
         </button>
       </nav>
+      {isMenuOpen && (
+  <div
+    className="nav-overlay"
+    onClick={() => setIsMenuOpen(false)}
+  >
+    <div
+      className="nav-drawer"
+      role="menu"
+      aria-label="Game menu"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <div className="nav-drawer-header">
+        <span>Menu</span>
 
+        <button
+          type="button"
+          className="nav-close-btn"
+          onClick={() => setIsMenuOpen(false)}
+          aria-label="Close menu"
+        >
+          ✕
+        </button>
+      </div>
+
+      <ul className="nav-drawer-list">
+        <li>
+          <button
+            type="button"
+            className="nav-drawer-item"
+            role="menuitem"
+          >
+            <span className="nav-drawer-icon" aria-hidden="true">
+              🎮
+            </span>
+
+            <span className="nav-drawer-label">
+              How to Play
+            </span>
+          </button>
+        </li>
+
+        <li>
+          <button
+            type="button"
+            className="nav-drawer-item"
+            disabled
+          >
+            <span className="nav-drawer-icon" aria-hidden="true">
+              ⚙️
+            </span>
+
+            <span className="nav-drawer-label">
+              Settings
+            </span>
+
+            <span className="nav-drawer-badge">
+              Soon
+            </span>
+          </button>
+        </li>
+
+        <li>
+          <button
+            type="button"
+            className="nav-drawer-item"
+            disabled
+          >
+            <span className="nav-drawer-icon" aria-hidden="true">
+              🔊
+            </span>
+
+            <span className="nav-drawer-label">
+              Sound Controls
+            </span>
+
+            <span className="nav-drawer-badge">
+              Soon
+            </span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+)}
       {isInfoOpen && (
         <div
           className="nav-overlay"

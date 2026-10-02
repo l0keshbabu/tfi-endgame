@@ -190,3 +190,136 @@
     display: inline-flex;
   }
 }
+.nav-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  height: 100%;
+  width: min(320px, 82vw);
+
+  background: rgba(4, 8, 16, 0.97);
+
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    -12px 0 40px rgba(0, 0, 0, 0.45);
+
+  padding: 22px 18px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  color: #e5e7eb;
+  font-family: "Nunito", sans-serif;
+
+  animation: navSlideIn 0.22s ease;
+
+  overflow-y: auto;
+}
+
+@keyframes navSlideIn {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.nav-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.08em;
+
+  color: #f9f4da;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  padding-bottom: 14px;
+}
+
+.nav-drawer-list {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.nav-drawer-item {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px 14px;
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  background: rgba(255, 255, 255, 0.03);
+
+  color: #e5e7eb;
+
+  font-family: "Nunito", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+
+  text-align: left;
+}
+
+.nav-drawer-item:not(:disabled):hover {
+  border-color: rgba(250, 204, 21, 0.35);
+
+  background: rgba(250, 204, 21, 0.06);
+
+  transform: translateX(-2px);
+}
+
+.nav-drawer-item:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.nav-drawer-icon {
+  font-size: 18px;
+}
+
+.nav-drawer-label {
+  flex: 1;
+}
+
+.nav-drawer-badge {
+  font-size: 10px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+
+  padding: 3px 8px;
+
+  border-radius: 999px;
+
+  background: rgba(250, 204, 21, 0.15);
+
+  border: 1px solid rgba(250, 204, 21, 0.3);
+
+  color: #facc15;
+}
