@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react"
 import "../styles/navigation.css"
 
-export default function Navigation() {
+export default function Navigation({onOverlayStateChange}) {
   const [isInfoOpen, setIsInfoOpen] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  useEffect(() => {
+    onOverlayStateChange?.(isMenuOpen || isInfoOpen)
+  },[isMenuOpen,isInfoOpen,onOverlayStateChange])
   useEffect(() => {
   function handleKeyDown(e) {
     if (e.key === "Escape") {
@@ -19,13 +22,14 @@ export default function Navigation() {
   }
 }, [])
   function openInfo() {
+    setIsMenuOpen(false)
     setIsInfoOpen(true)
   }
 
   function closeInfo() {
     setIsInfoOpen(false)
   }
-
+  
   return (
     <>
       <nav className="page-nav" aria-label="Game navigation">
@@ -78,6 +82,7 @@ export default function Navigation() {
             type="button"
             className="nav-drawer-item"
             role="menuitem"
+            onClick={openInfo}
           >
             <span className="nav-drawer-icon" aria-hidden="true">
               🎮

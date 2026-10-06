@@ -28,6 +28,7 @@ export default function App() {
   const [currentMovie, setCurrentMovie] = useState(() => getRandomMovie())
   const [guessedLetters, setGuessedLetters] = useState([])
   const [currentStreak, setCurrentStreak] = useState(0)
+  const [isNavOverlayOpen,setIsNavOverlayOpen] = useState(false)
 
   const [bestStreak, setBestStreak] = useState(() => {
     const savedBestStreak = localStorage.getItem("bestStreak")
@@ -189,7 +190,8 @@ export default function App() {
 
   return (
     <main className="game-page">
-      <Navigation />
+      <Navigation 
+      onOverlayStateChange={setIsNavOverlayOpen}/>
       {isGameWon && (
         <Confetti
           recycle={false}
