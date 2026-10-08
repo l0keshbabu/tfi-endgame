@@ -2,7 +2,8 @@ export default function Keyboard({
   guessedLetters,
   currentMovie,
   addGuessedLetter,
-  isGameOver
+  isGameOver,
+  locked = false
 }) {
   const alphabets = "abcdefghijklmnopqrstuvwxyz"
 
@@ -20,7 +21,7 @@ export default function Keyboard({
       <button
         key={letter}
         className={className}
-        disabled={isGameOver || isGuessed}
+        disabled={isGameOver || isGuessed || locked}
         onClick={() => addGuessedLetter(letter)}
       >
         {letter.toUpperCase()}

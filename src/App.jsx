@@ -163,7 +163,7 @@ export default function App() {
   // Physical keyboard support
   useEffect(() => {
     function handleKeyDown(e) {
-      if (isGameOver) return
+      if (isGameOver || isNavOverlayOpen) return
 
       const key = e.key.toLowerCase()
 
@@ -180,7 +180,7 @@ export default function App() {
 
     return () =>
       window.removeEventListener("keydown", handleKeyDown)
-  }, [isGameOver, addGuessedLetter])
+  }, [isGameOver,isNavOverlayOpen, addGuessedLetter])
 
 
   if (showDisclaimer) {
@@ -240,6 +240,7 @@ export default function App() {
           currentMovie={currentMovie}
           addGuessedLetter={addGuessedLetter}
           isGameOver={isGameOver}
+          locked={isNavOverlayOpen}
         />
 
         <audio
