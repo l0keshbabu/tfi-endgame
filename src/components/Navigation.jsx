@@ -22,7 +22,7 @@ export default function Navigation({onOverlayStateChange}) {
   }
 }, [])
   function openInfo() {
-    setIsMenuOpen(false)
+
     setIsInfoOpen(true)
   }
 
