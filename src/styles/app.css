@@ -219,6 +219,19 @@ body {
   }
 }
 
+@media (max-width: 480px) {
+  .sprocket-group {
+    padding: 0 5px;
+  }
+}
+
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .sprocket-group {
+    padding: 0 12px;
+  }
+}
+
 .game-header {
   width: 100%;
   
