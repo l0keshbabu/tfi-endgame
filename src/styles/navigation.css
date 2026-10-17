@@ -177,19 +177,11 @@
     transform: translateY(0) scale(1);
   }
 }
+
 .menu-trigger {
-  display: none;
+  display: inline-flex;
 }
 
-@media (max-width: 1024px) {
-  .info-trigger {
-    display: none;
-  }
-
-  .menu-trigger {
-    display: inline-flex;
-  }
-}
 .nav-drawer {
   position: fixed;
   top: 0;

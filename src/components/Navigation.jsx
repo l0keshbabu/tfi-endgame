@@ -33,15 +33,7 @@ export default function Navigation({onOverlayStateChange}) {
   return (
     <>
       <nav className="page-nav" aria-label="Game navigation">
-        <button
-          type="button"
-          className="nav-icon-btn info-trigger"
-          onClick={openInfo}
-          aria-label="How to play"
-          aria-haspopup="dialog"
-        >
-          <span aria-hidden="true">ⓘ</span>
-        </button>
+        
         <button
         type="button"
         className="nav-icon-btn menu-trigger"
