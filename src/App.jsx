@@ -29,6 +29,7 @@ export default function App() {
   const [guessedLetters, setGuessedLetters] = useState([])
   const [currentStreak, setCurrentStreak] = useState(0)
   const [isNavOverlayOpen,setIsNavOverlayOpen] = useState(false)
+  const [soundEnabled, setSoundEnabled] = useState(true)
 
   const [bestStreak, setBestStreak] = useState(() => {
     const savedBestStreak = localStorage.getItem("bestStreak")
@@ -120,22 +121,38 @@ export default function App() {
   const audioLostRef = useRef(null)
 
   useEffect(() => {
+    if(!soundEnabled){
+      if(audioLostRef.current){
+        audioLostRef.current.pause()
+        audioLostRef.current.currentTime = 0
+      }
+      return
+    }
+
     if (isGameLost && audioLostRef.current) {
       audioLostRef.current.currentTime = 0
       audioLostRef.current.play()
     }
-  }, [isGameLost])
+  }, [soundEnabled, isGameLost])
 
 
   // Win sound
   const audioWonRef = useRef(null)
 
   useEffect(() => {
+    if(!soundEnabled){
+      if(audioWonRef.current){
+        audioWonRef.current.pause()
+        audioWonRef.current.currentTime = 0
+      }
+      return
+    }
+
     if (isGameWon && audioWonRef.current) {
       audioWonRef.current.currentTime = 0
       audioWonRef.current.play()
     }
-  }, [isGameWon])
+  }, [isGameWon, soundEnabled])
 
 
   // Save best streak
@@ -191,7 +208,9 @@ export default function App() {
   return (
     <main className="game-page">
       <Navigation 
-      onOverlayStateChange={setIsNavOverlayOpen}/>
+      onOverlayStateChange={setIsNavOverlayOpen}
+      soundEnabled={soundEnabled}
+      onToggleSound={()=>setSoundEnabled(prev => !prev)}/>
       {isGameWon && (
         <Confetti
           recycle={false}

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import "../styles/navigation.css"
 
-export default function Navigation({onOverlayStateChange}) {
+export default function Navigation({onOverlayStateChange,soundEnabled,onToggleSound}) {
   const [isInfoOpen, setIsInfoOpen] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   useEffect(() => {
@@ -86,6 +86,27 @@ export default function Navigation({onOverlayStateChange}) {
           </button>
         </li>
 
+        
+        <li>
+          <button
+            type="button"
+            className="nav-drawer-item"
+            onClick={onToggleSound}
+            role="menuitem"
+            aria-pressed={!soundEnabled}
+            aria-label={soundEnabled ? "Turn sound off" : "Turn sound on"}
+          >
+            <span className="nav-drawer-icon" aria-hidden="true">
+              {soundEnabled ? "🔊" : "🔇"}
+            </span>
+
+            <span className="nav-drawer-label">
+              {soundEnabled ? "Sound ON" : "Sound OFF"}
+            </span>
+
+            
+          </button>
+        </li>
         <li>
           <button
             type="button"
@@ -106,25 +127,6 @@ export default function Navigation({onOverlayStateChange}) {
           </button>
         </li>
 
-        <li>
-          <button
-            type="button"
-            className="nav-drawer-item"
-            disabled
-          >
-            <span className="nav-drawer-icon" aria-hidden="true">
-              🔊
-            </span>
-
-            <span className="nav-drawer-label">
-              Sound Controls
-            </span>
-
-            <span className="nav-drawer-badge">
-              Soon
-            </span>
-          </button>
-        </li>
       </ul>
     </div>
   </div>
