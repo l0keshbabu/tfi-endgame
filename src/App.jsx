@@ -114,11 +114,14 @@ export default function App() {
   function startNewGame() {
     setCurrentMovie(getRandomMovie())
     setGuessedLetters([])
+    hasPlayedWonSound.current=false
+    hasPlayedLostSound.current=false
   }
 
 
   // Lose sound
   const audioLostRef = useRef(null)
+  const hasPlayedLostSound = useRef(false)
 
   useEffect(() => {
     if(!soundEnabled){
@@ -129,16 +132,17 @@ export default function App() {
       return
     }
 
-    if (isGameLost && audioLostRef.current) {
+    if (isGameLost && !hasPlayedLostSound.current && audioLostRef.current) {
       audioLostRef.current.currentTime = 0
       audioLostRef.current.play()
+      hasPlayedLostSound.current = true
     }
   }, [soundEnabled, isGameLost])
 
 
   // Win sound
   const audioWonRef = useRef(null)
-
+  const hasPlayedWonSound = useRef(false)
   useEffect(() => {
     if(!soundEnabled){
       if(audioWonRef.current){
@@ -148,13 +152,15 @@ export default function App() {
       return
     }
 
-    if (isGameWon && audioWonRef.current) {
+    if (isGameWon &&
+    !hasPlayedWonSound.current && audioWonRef.current) {
       audioWonRef.current.currentTime = 0
       audioWonRef.current.play()
+       hasPlayedWonSound.current = true
     }
   }, [isGameWon, soundEnabled])
 
-
+ 
   // Save best streak
   useEffect(() => {
     localStorage.setItem("bestStreak", bestStreak)
